@@ -48,10 +48,22 @@ namespace AkademiaCzaliczenie
                         programStep = 0;
                         break;
                     case 3:
-                        Console.ReadKey();
+                        MultiplyAB MUL = new MultiplyAB();
+                        EnterData(out A, out B);
+                        MUL.a = A;
+                        MUL.b = B;
+                        result = MUL.MultiplyABResult();
+                        PrintResult(programStep, result);
+                        programStep = 0;
                         break;
                     case 4:
-                        Console.ReadKey();
+                        DivideAB DIV = new DivideAB();
+                        EnterData(out A, out B);
+                        DIV.a = A;
+                        DIV.b = B;
+                        result = DIV.DivideABResult();
+                        PrintResult(programStep, result);
+                        programStep = 0;
                         break;
                     case 5:
                         Console.ReadKey();
