@@ -8,7 +8,7 @@ namespace AkademiaCzaliczenie
 {
     public class SubstractAB:Operation
     {
-        public float SubstractABResult()
+        public override float OperationResult()
         {
             return this.a - this.b;
         }

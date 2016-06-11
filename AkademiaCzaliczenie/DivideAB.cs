@@ -8,7 +8,7 @@ namespace AkademiaCzaliczenie
 {
     public class DivideAB : Operation
     {
-        public float DivideABResult()
+        public override float OperationResult()
         {
             return this.a / this.b;
         }

@@ -34,7 +34,7 @@ namespace AkademiaCzaliczenie
                         EnterData(out A, out B);
                         ADD.a = A;
                         ADD.b = B;
-                        result = ADD.AdditionABResult();
+                        result = ADD.OperationResult();
                         PrintResult(programStep, result);
                         programStep = 0;
                         break;
@@ -43,7 +43,7 @@ namespace AkademiaCzaliczenie
                         EnterData(out A, out B);
                         SUB.a = A;
                         SUB.b = B;
-                        result = SUB.SubstractABResult();
+                        result = SUB.OperationResult();
                         PrintResult(programStep, result);
                         programStep = 0;
                         break;
@@ -52,7 +52,7 @@ namespace AkademiaCzaliczenie
                         EnterData(out A, out B);
                         MUL.a = A;
                         MUL.b = B;
-                        result = MUL.MultiplyABResult();
+                        result = MUL.OperationResult();
                         PrintResult(programStep, result);
                         programStep = 0;
                         break;
@@ -61,7 +61,7 @@ namespace AkademiaCzaliczenie
                         EnterData(out A, out B);
                         DIV.a = A;
                         DIV.b = B;
-                        result = DIV.DivideABResult();
+                        result = DIV.OperationResult();
                         PrintResult(programStep, result);
                         programStep = 0;
                         break;

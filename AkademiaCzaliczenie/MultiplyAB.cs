@@ -8,7 +8,7 @@ namespace AkademiaCzaliczenie
 {
     public class MultiplyAB : Operation
     {
-        public float MultiplyABResult()
+        public override float OperationResult()
         {
             return this.a * this.b;
         }

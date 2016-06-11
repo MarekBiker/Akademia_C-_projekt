@@ -10,5 +10,10 @@ namespace AkademiaCzaliczenie
     {
         public float a { get; set; }
         public float b { get; set; }
+
+        public virtual float OperationResult()
+        {
+            return 0;
+        }
     }
 }

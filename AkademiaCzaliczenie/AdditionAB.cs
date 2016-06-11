@@ -8,7 +8,7 @@ namespace AkademiaCzaliczenie
 {
     public class AdditionAB : Operation
     {
-        public float AdditionABResult()
+        public override float OperationResult()
         {
             return this.a + this.b;
         }
