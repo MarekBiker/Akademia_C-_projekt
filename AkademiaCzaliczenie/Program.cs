@@ -113,7 +113,7 @@ namespace AkademiaCzaliczenie
             Console.WriteLine("\n Dzięki :) \n\n");
         }
 
-        public static void PrintResult(int programStep, float result)
+        private static void PrintResult(int programStep, float result)
         {
             if (programStep == 1)
             {
@@ -135,7 +135,7 @@ namespace AkademiaCzaliczenie
             Console.ReadKey();
         }
 
-        public static void DataToSave(out DataToSave structToList, float A, float B, float result, OperationSign sign)
+        private static void DataToSave(out DataToSave structToList, float A, float B, float result, OperationSign sign)
         {
             structToList.operation = "+";
             switch (sign)
@@ -160,14 +160,14 @@ namespace AkademiaCzaliczenie
 
     }
 
-    public enum OperationSign
+    enum OperationSign
     {
         Dodawanie = 1,
         Odejmowanie = 2,
         Mnożenie = 3,
         Dzielenie = 4,
     }
-    public struct DataToSave
+    struct DataToSave
     {
         public float A;
         public float B;
