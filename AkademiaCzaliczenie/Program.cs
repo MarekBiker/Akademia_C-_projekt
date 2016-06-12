@@ -13,6 +13,7 @@ namespace AkademiaCzaliczenie
             int programStep = 0;
             float A, B;
             float result;
+
             while (true)
             {
                 switch (programStep)
@@ -118,6 +119,14 @@ namespace AkademiaCzaliczenie
             Console.ReadKey();
         }
 
+    }
+
+    public enum OperationSign
+    {
+        Dodawanie = 1,
+        Odejmowanie = 2,
+        Mnożenie = 3,
+        Dzielenie = 4,
     }
 
 }
