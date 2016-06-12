@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdditionAB.cs" />
+    <Compile Include="MainTypes.cs" />
     <Compile Include="DivideAB.cs" />
     <Compile Include="ICoperation.cs" />
     <Compile Include="MultiplyAB.cs" />
