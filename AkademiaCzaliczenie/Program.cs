@@ -61,8 +61,19 @@ namespace AkademiaCzaliczenie
                         EnterData(out A, out B);
                         DIV.a = A;
                         DIV.b = B;
-                        result = DIV.OperationResult();
-                        PrintResult(programStep, result);
+                        try
+                        {
+                            if (DIV.b == 0)
+                                throw new DivideByZeroException();
+                            result = DIV.OperationResult();
+                            PrintResult(programStep, result);
+                        }
+                        catch (System.DivideByZeroException e)
+                        {
+                            Console.WriteLine("Nie można dzielić przez 0 !!!");
+                            Console.WriteLine("Wciśnij dowolny klawisz...\n");
+                            Console.ReadKey();
+                        }
                         programStep = 0;
                         break;
                     case 5:
@@ -82,7 +93,7 @@ namespace AkademiaCzaliczenie
             A = float.Parse(Console.ReadLine());
             Console.WriteLine("\nB: ");
             B = float.Parse(Console.ReadLine());
-            Console.WriteLine("\n\n Dzięki :) \n\n\n");
+            Console.WriteLine("\n Dzięki :) \n\n");
         }
 
         public static void PrintResult(int programStep, float result)
