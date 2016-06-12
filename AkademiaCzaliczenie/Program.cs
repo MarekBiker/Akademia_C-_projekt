@@ -88,6 +88,7 @@ namespace AkademiaCzaliczenie
                         programStep = 0;
                         break;
                     case 5:
+                        Console.Clear();
                         foreach (DataToSave data in OperationsList)
                         {
                             Console.WriteLine(data.A + data.operation + data.B + " = " + data.result);

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace AkademiaCzaliczenie
 {
-    public class AdditionAB : Operation
+    public class AdditionAB : ICoperation
     {
-        public override float OperationResult()
+        public float a { get; set; }
+        public float b { get; set; }
+        public float OperationResult()
         {
             return this.a + this.b;
         }
