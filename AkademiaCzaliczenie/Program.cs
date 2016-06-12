@@ -13,6 +13,8 @@ namespace AkademiaCzaliczenie
             int programStep = 0;
             float A, B;
             float result;
+            DataToSave structToList = new DataToSave();
+            List<DataToSave> OperationsList = new List<DataToSave>();
 
             while (true)
             {
@@ -37,6 +39,8 @@ namespace AkademiaCzaliczenie
                         ADD.b = B;
                         result = ADD.OperationResult();
                         PrintResult(programStep, result);
+                        DataToSave(out structToList, A, B, result, (OperationSign)programStep);
+                        OperationsList.Add(structToList);
                         programStep = 0;
                         break;
                     case 2:
@@ -46,6 +50,8 @@ namespace AkademiaCzaliczenie
                         SUB.b = B;
                         result = SUB.OperationResult();
                         PrintResult(programStep, result);
+                        DataToSave(out structToList, A, B, result, (OperationSign)programStep);
+                        OperationsList.Add(structToList);
                         programStep = 0;
                         break;
                     case 3:
@@ -55,6 +61,8 @@ namespace AkademiaCzaliczenie
                         MUL.b = B;
                         result = MUL.OperationResult();
                         PrintResult(programStep, result);
+                        DataToSave(out structToList, A, B, result, (OperationSign)programStep);
+                        OperationsList.Add(structToList);
                         programStep = 0;
                         break;
                     case 4:
@@ -68,6 +76,8 @@ namespace AkademiaCzaliczenie
                                 throw new DivideByZeroException();
                             result = DIV.OperationResult();
                             PrintResult(programStep, result);
+                            DataToSave(out structToList, A, B, result, (OperationSign)programStep);
+                            OperationsList.Add(structToList);
                         }
                         catch (System.DivideByZeroException e)
                         {
@@ -78,7 +88,13 @@ namespace AkademiaCzaliczenie
                         programStep = 0;
                         break;
                     case 5:
+                        foreach (DataToSave data in OperationsList)
+                        {
+                            Console.WriteLine(data.A + data.operation + data.B + " = " + data.result);
+                        }
+                        Console.WriteLine("\nWciśnij dowolny klawisz...\n");
                         Console.ReadKey();
+                        programStep = 0;
                         break;
                     case 6:
                         Environment.Exit(0);
@@ -119,6 +135,29 @@ namespace AkademiaCzaliczenie
             Console.ReadKey();
         }
 
+        public static void DataToSave(out DataToSave structToList, float A, float B, float result, OperationSign sign)
+        {
+            structToList.operation = "+";
+            switch (sign)
+            {
+                case OperationSign.Dodawanie:
+                    structToList.operation = "+";
+                    break;
+                case OperationSign.Odejmowanie:
+                    structToList.operation = "-";
+                    break;
+                case OperationSign.Mnożenie:
+                    structToList.operation = "*";
+                    break;
+                case OperationSign.Dzielenie:
+                    structToList.operation = "/";
+                    break;
+            }
+            structToList.A = A;
+            structToList.B = B;
+            structToList.result = result;
+        }
+
     }
 
     public enum OperationSign
@@ -127,6 +166,13 @@ namespace AkademiaCzaliczenie
         Odejmowanie = 2,
         Mnożenie = 3,
         Dzielenie = 4,
+    }
+    public struct DataToSave
+    {
+        public float A;
+        public float B;
+        public float result;
+        public string operation;
     }
 
 }
